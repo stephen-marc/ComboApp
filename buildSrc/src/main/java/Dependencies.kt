@@ -30,6 +30,7 @@ object Android {
 }
 
 object Plugin {
+    val butterknife = "10.0.0"
     val gradleBuildTools = "3.5.0-beta04"
     val ossLicenses = "0.9.3"
     val gradleVersion = "0.21.0"

@@ -14,7 +14,7 @@ buildscript {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.kotlin}")
         classpath("com.akaita.android:easylauncher:${Plugin.easyLauncher}")
         classpath("com.google.android.gms:oss-licenses-plugin:${Plugin.ossLicenses}")
-        classpath("com.jakewharton:butterknife-gradle-plugin:10.0.0")
+        classpath("com.jakewharton:butterknife-gradle-plugin:${Plugin.butterknife}")
     }
 }
 
