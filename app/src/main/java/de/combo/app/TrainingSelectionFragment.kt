@@ -31,13 +31,20 @@ class TrainingSelectionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val listController = ListController()
-        binding.recyclerView.setControllerAndBuildModels(listController)
-        binding.recyclerView.setPaddingDp(16)
-        binding.recyclerView.layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        listController.requestModelBuild()
+        initCarousel()
+    }
 
+    private fun initCarousel() {
+        val listController = ListController()
+        binding.recyclerView.apply {
+            setControllerAndBuildModels(listController)
+            setPaddingDp(16)
+            layoutManager =
+                    LinearLayoutManager(requireContext(),
+                            LinearLayoutManager.HORIZONTAL,
+                             false)
+        }
+        listController.requestModelBuild()
     }
 }
 
