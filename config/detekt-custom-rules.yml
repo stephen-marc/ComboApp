@@ -1,0 +1,3 @@
+complexity:
+  TooManyFunctions:
+    threshold: 20

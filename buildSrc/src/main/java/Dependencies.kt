@@ -29,7 +29,7 @@ object Android {
     val applicationBaseName = "Combo"
 }
 
-object Plugins {
+object Plugin {
     val gradleBuildTools = "3.5.0-beta04"
     val ossLicenses = "0.9.3"
     val gradleVersion = "0.21.0"
