@@ -107,11 +107,6 @@ android {
         }
     }
 
-    lintOptions {
-        isAbortOnError = true
-        isWarningsAsErrors = true
-        setLintConfig(file("../lint.xml"))
-    }
 }
 
 kapt {

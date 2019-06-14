@@ -87,7 +87,9 @@ subprojects {
 
                     lintOptions {
                         isCheckReleaseBuilds = false
-                        setLintConfig(file("lint.xml"))
+                        isAbortOnError = true
+                        isWarningsAsErrors = true
+                        setLintConfig(file("../lint.xml"))
                     }
                 }
 
