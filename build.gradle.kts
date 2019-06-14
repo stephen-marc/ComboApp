@@ -6,7 +6,7 @@ plugins {
     id("com.github.ben-manes.versions") version Plugin.gradleVersion
 }
 
-apply{
+apply {
     from("https://raw.githubusercontent.com/JakeWharton/SdkSearch/master/gradle/projectDependencyGraph.gradle")
 }
 
@@ -47,7 +47,7 @@ allprojects {
     detekt {
         parallel = true
 
-        config = files("../config/detekt-custom-rules.yml")
+        config = files("$rootDir/config/detekt-custom-rules.yml")
 
         reports {
             html.enabled = true
@@ -70,12 +70,6 @@ allprojects {
 
     afterEvaluate {
         if (project.plugins.findPlugin("android") != null) {
-            println(
-                "" + this.name
-            )
-
-
-
             configure<com.android.build.gradle.AppExtension> {
 
 
