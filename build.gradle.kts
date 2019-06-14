@@ -1,4 +1,10 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+import org.jlleitschuh.gradle.ktlint.KtlintExtension
+
+plugins {
+    id("io.gitlab.arturbosch.detekt") version Plugin.detekt
+    id("org.jlleitschuh.gradle.ktlint") version Plugin.ktlintGradle
+    id("com.github.ben-manes.versions") version Plugin.gradleVersion
+}
 
 buildscript {
     repositories {
@@ -24,6 +30,28 @@ allprojects {
         google()
         jcenter()
         maven("https://jitpack.io")
+    }
+}
+
+subprojects {
+    apply {
+        plugin("io.gitlab.arturbosch.detekt")
+        plugin("org.jlleitschuh.gradle.ktlint")
+
+    }
+
+    detekt {
+        parallel = true
+
+        config = files("../config/detekt-custom-rules.yml")
+
+        reports {
+            html.enabled = true
+        }
+    }
+
+    configure<KtlintExtension> {
+        android.set(true)
     }
 }
 
