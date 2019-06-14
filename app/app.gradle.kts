@@ -140,4 +140,6 @@ configure {
 dependencies {
     implementation(project(":core"))
     implementation(project(":domain"))
+    implementation(project(":data"))
+    implementation(project(":training"))
 }

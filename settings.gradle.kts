@@ -3,11 +3,15 @@ import java.util.function.Consumer
 include("app")
 include("core")
 include("domain")
+include("data")
+include("training")
 
 //this is needed because otherwise the :libraries:module path adds the directory /libraries to the modules list and
 //the configruation breaks (this needs to be done for all modules in subdirectories)
 project(":core").projectDir = file("libraries/core")
 project(":domain").projectDir = file("libraries/domain")
+project(":data").projectDir = file("libraries/data")
+project(":training").projectDir = file("features/training")
 
 rootProject.children.forEach(
     Consumer { project ->
