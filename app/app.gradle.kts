@@ -5,6 +5,7 @@ plugins {
     kotlin("kapt")
     id("com.google.android.gms.oss-licenses-plugin")
     id("com.akaita.android.easylauncher")
+    id("androidx.navigation.safeargs")
 }
 
 apply {
@@ -142,6 +143,10 @@ dependencies {
 
     implementation(AppDeps.androidxConstraintLayoutSolver)
     implementation(AppDeps.androidxConstraintLayout)
+
+    implementation(AppDeps.androidxNavigationFragment)
+    implementation(AppDeps.androidxNavigationUI)
+
 
     testImplementation(TestDeps.junit4)
     androidTestImplementation(TestDeps.androidxJunit)

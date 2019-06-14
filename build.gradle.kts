@@ -20,6 +20,7 @@ buildscript {
     }
 
     dependencies {
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Plugin.androidxSafeArgs}")
         classpath("com.android.tools.build:gradle:${Plugin.gradleBuildTools}")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.kotlin}")
         classpath("com.akaita.android:easylauncher:${Plugin.easyLauncher}")
