@@ -1,4 +1,4 @@
-include ':app'
+include ':app', ':buildSrc'
 rootProject.name = 'ComboApp'
 
 rootProject.children.each { project ->
