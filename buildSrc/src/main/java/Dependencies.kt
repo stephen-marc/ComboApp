@@ -21,7 +21,7 @@ object Version {
         "2.1.0-alpha04" //https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-reactivestreams-ktx
     val timber = "4.7.1"
     val leakCanary = "1.6.2"
-    val navigationX = "2.1.0-alpha03"
+    val navigationX = "2.1.0-alpha05"
     val viewPager = "1.0.0-alpha04"
 }
 
@@ -41,6 +41,7 @@ object Plugin {
     val ktlintGradle = "8.0.0"
     val detekt = "1.0.0-RC11"
     val easyLauncher = "1.3.1"
+    val androidxSafeArgs = "2.1.0-alpha05"
 }
 
 object AppDeps {
