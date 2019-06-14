@@ -10,33 +10,19 @@ apply {
     from("../config/version.gradle")
 }
 
-//use highest possible minSdk during dev and production-minSDK everywhere else
-//keeps lint warnings on the minSDK
-val minSdkPropertyName = "devMinSdk"
-val appliedSdk =
-    if (project.hasProperty(minSdkPropertyName)) project.property(
-        minSdkPropertyName
-    ) else Android.minSdk
-val projectVersionName: groovy.lang.Closure<Any?> by extra
-val projectVersionCode: groovy.lang.Closure<Any?> by extra
-val buildNumber = 1
 
 android {
-    compileSdkVersion(Android.sdkVersion)
     defaultConfig {
         applicationId = Android.applicationId
-        minSdkVersion(appliedSdk.toString())
-        targetSdkVersion(Android.sdkVersion)
         project.setProperty("archivesBaseName", Android.applicationBaseName)
-        versionName = projectVersionName().toString()
-        versionCode = buildNumber
+
         // Friendly print the version output to the Gradle console
         println(
             "\n--------" + "VERSION DATA--------" +
                     "\n- Name: " + Android.applicationBaseName +
                     "\n- CODE: " + versionCode +
                     "\n- VER: " + versionName +
-                    "\n- MinSDK: " + appliedSdk +
+                    "\n- MinSDK: " + minSdkVersion +
                     "\n----------------------------\n"
         )
     }

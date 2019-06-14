@@ -53,6 +53,36 @@ subprojects {
     configure<KtlintExtension> {
         android.set(true)
     }
+
+    //use highest possible minSdk during dev and production-minSDK everywhere else
+    //keeps lint warnings on the minSDK
+    val minSdkPropertyName = "devMinSdk"
+    val appliedSdk =
+        if (project.hasProperty(minSdkPropertyName)) project.property(
+            minSdkPropertyName
+        ) else Android.minSdk
+    val projectVersionName: groovy.lang.Closure<Any?> by extra
+    val buildNumber = 1
+
+    afterEvaluate {
+        if (this.hasProperty("android")) {
+            configure<com.android.build.gradle.AppExtension> {
+                compileSdkVersion(Android.sdkVersion)
+
+                defaultConfig {
+                    minSdkVersion(appliedSdk.toString())
+                    targetSdkVersion(Android.sdkVersion)
+                    versionName = projectVersionName().toString()
+                    versionCode = buildNumber
+                }
+
+                compileOptions {
+                    sourceCompatibility = Android.javaVersion
+                    targetCompatibility = Android.javaVersion
+                }
+            }
+        }
+    }
 }
 
 

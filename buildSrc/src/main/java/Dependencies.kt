@@ -1,3 +1,5 @@
+import org.gradle.api.JavaVersion
+
 object Version {
     val koin = "1.0.2"  //https://insert-koin.io/
     val rxJava = "2.2.4"    //https://github.com/ReactiveX/RxJava/releases
@@ -27,6 +29,7 @@ object Android {
     val minSdk = 26
     val applicationId = "de.combo"
     val applicationBaseName = "Combo"
+    val javaVersion = JavaVersion.VERSION_1_8
 }
 
 object Plugin {
