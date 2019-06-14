@@ -125,7 +125,6 @@ allprojects {
                     buildTypes {
                         create("qa") {
                             isMinifyEnabled = true
-                            isUseProguard = true
                             isDebuggable = false
                             proguardFiles(
                                 getDefaultProguardFile("proguard-android.txt"),

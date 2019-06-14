@@ -80,7 +80,6 @@ android {
             )
             signingConfig = signingConfigs.findByName("debug")
             isMinifyEnabled = true
-            isUseProguard = true
             isDebuggable = false
             isShrinkResources = true
             applicationIdSuffix = ".testing"
@@ -94,7 +93,6 @@ android {
             resValue("string", "app_name", Android.applicationBaseName)
             signingConfig = signingConfigs.findByName("release")
             isMinifyEnabled = true
-            isUseProguard = true
             isDebuggable = false
             isShrinkResources = true
             proguardFiles(

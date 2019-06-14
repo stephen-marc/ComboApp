@@ -26,7 +26,7 @@ object Version {
 
 object Android {
     val sdkVersion = 28
-    val minSdk = 26
+    val minSdk = 23
     val applicationId = "de.combo"
     val applicationBaseName = "Combo"
     val javaVersion = JavaVersion.VERSION_1_8
