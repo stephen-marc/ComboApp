@@ -108,3 +108,10 @@ object AppDeps {
     //Tools
     val timber = "com.jakewharton.timber:timber:${Version.timber}"
 }
+
+object TestDeps {
+    val junit4 = "junit:junit:4.12"
+    val androidxJunit = "androidx.test.ext:junit:1.1.1"
+    val androidxEspresso = "androidx.test.espresso:espresso-core:3.2.0"
+
+}
