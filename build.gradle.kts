@@ -33,7 +33,7 @@ allprojects {
     }
 }
 
-subprojects {
+allprojects {
     apply {
         plugin("io.gitlab.arturbosch.detekt")
         plugin("org.jlleitschuh.gradle.ktlint")
@@ -65,8 +65,16 @@ subprojects {
     val buildNumber = 1
 
     afterEvaluate {
-        if (this.hasProperty("android")) {
+        if (project.plugins.findPlugin("android") != null) {
+            println(
+                "" + this.name
+            )
+
+
+
             configure<com.android.build.gradle.AppExtension> {
+
+
                 compileSdkVersion(Android.sdkVersion)
 
                 defaultConfig {
@@ -98,6 +106,43 @@ subprojects {
                     targetCompatibility = Android.javaVersion
                 }
             }
+        }
+        //this split is necessary because there is no configurationExtension which is applicable for android-library and
+        //android-application/feature modules
+        if (project.plugins.findPlugin("android-library") != null) {
+            configure<com.android.build.gradle.LibraryExtension> {
+                compileSdkVersion(Android.sdkVersion)
+
+                defaultConfig {
+                    minSdkVersion(appliedSdk.toString())
+                    targetSdkVersion(Android.sdkVersion)
+
+                    lintOptions {
+                        isCheckReleaseBuilds = false
+                        isAbortOnError = true
+                        isWarningsAsErrors = true
+                        setLintConfig(file("../lint.xml"))
+                    }
+
+                    buildTypes {
+                        create("qa") {
+                            isMinifyEnabled = true
+                            isUseProguard = true
+                            isDebuggable = false
+                            proguardFiles(
+                                getDefaultProguardFile("proguard-android.txt"),
+                                "proguard-rules.pro"
+                            )
+                        }
+                    }
+                }
+
+                compileOptions {
+                    sourceCompatibility = Android.javaVersion
+                    targetCompatibility = Android.javaVersion
+                }
+            }
+
         }
     }
 }

@@ -138,7 +138,7 @@ configure {
 }
 
 dependencies {
-
+    implementation(project(":core"))
     //Kotlin
     implementation(AppDeps.kotlin)
 
