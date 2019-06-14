@@ -74,6 +74,21 @@ subprojects {
                     targetSdkVersion(Android.sdkVersion)
                     versionName = projectVersionName().toString()
                     versionCode = buildNumber
+
+                    // Friendly print the version output to the Gradle console
+                    println(
+                        "\n--------" + "VERSION DATA--------" +
+                                "\n- Name: " + Android.applicationBaseName +
+                                "\n- CODE: " + versionCode +
+                                "\n- VER: " + versionName +
+                                "\n- MinSDK: " + minSdkVersion +
+                                "\n----------------------------\n"
+                    )
+
+                    lintOptions {
+                        isCheckReleaseBuilds = false
+                        setLintConfig(file("lint.xml"))
+                    }
                 }
 
                 compileOptions {

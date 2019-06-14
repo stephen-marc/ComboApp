@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    kotlin("android.extensions")
     kotlin("kapt")
     id("com.google.android.gms.oss-licenses-plugin")
     id("com.akaita.android.easylauncher")
@@ -15,16 +16,6 @@ android {
     defaultConfig {
         applicationId = Android.applicationId
         project.setProperty("archivesBaseName", Android.applicationBaseName)
-
-        // Friendly print the version output to the Gradle console
-        println(
-            "\n--------" + "VERSION DATA--------" +
-                    "\n- Name: " + Android.applicationBaseName +
-                    "\n- CODE: " + versionCode +
-                    "\n- VER: " + versionName +
-                    "\n- MinSDK: " + minSdkVersion +
-                    "\n----------------------------\n"
-        )
     }
 
     packagingOptions {
@@ -41,11 +32,6 @@ android {
                 "META-INF/MANIFEST.MF",
                 "META-INF/NOTICE.txt"
             )
-    }
-
-    lintOptions {
-        isCheckReleaseBuilds = false
-        setLintConfig(file("lint.xml"))
     }
 
     dataBinding {
