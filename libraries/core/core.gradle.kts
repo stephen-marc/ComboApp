@@ -12,6 +12,8 @@ kapt {
 dependencies {
     implementation(AppDeps.kotlin)
 
+    implementation(AppDeps.materialComp)
+
     testImplementation(TestDeps.junit4)
     androidTestImplementation(TestDeps.androidxJunit)
     androidTestImplementation(TestDeps.androidxEspresso)
