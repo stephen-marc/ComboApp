@@ -5,6 +5,7 @@
     <color name="colorAccent">@color/boston_blue</color>
 
 
+    <color name="white">#FFFFFF</color>
     <color name="safety_orange">#FF9802</color>
     <color name="fulvous">#E68801</color>
     <color name="boston_blue">#3499BB</color>
