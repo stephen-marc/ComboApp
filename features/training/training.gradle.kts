@@ -10,6 +10,8 @@ kapt {
 }
 
 dependencies {
+    implementation(AppDeps.kotlin)
+
     implementation(project(":domain"))
     implementation(project(":core"))
 
