@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">@color/safety_orange</color>
+    <color name="colorPrimaryDark">@color/fulvous</color>
+    <color name="colorAccent">@color/boston_blue</color>
+
+
+    <color name="safety_orange">#FF9802</color>
+    <color name="fulvous">#E68801</color>
+    <color name="boston_blue">#3499BB</color>
 </resources>
