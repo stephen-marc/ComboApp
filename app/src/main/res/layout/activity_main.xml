@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment
-        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/navHostFragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+    </data>
+
+    <FrameLayout
         android:layout_height="match_parent"
-        app:navGraph="@navigation/app_graph"
-        app:defaultNavHost="true"/>
+        android:layout_width="match_parent">
+
+        <fragment
+            android:id="@+id/navHostFragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:navGraph="@navigation/app_graph"
+            app:defaultNavHost="true"
+            />
+    </FrameLayout>
+</layout>
