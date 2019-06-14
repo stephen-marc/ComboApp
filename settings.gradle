@@ -1,4 +1,6 @@
 include ':app'
-rootProject.name='ComboApp'
+rootProject.name = 'ComboApp'
 
-
+rootProject.children.each { project ->
+    project.buildFileName = "${project.name}.gradle"
+}
