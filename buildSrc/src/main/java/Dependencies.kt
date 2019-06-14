@@ -6,23 +6,30 @@ object Version {
     val rxKotlin = "2.1.0"  //https://github.com/ReactiveX/RxKotlin
     val rxAndroid = "2.1.0" //https://github.com/ReactiveX/RxAndroid
     val kotlin = "1.3.31"   // build.gradle
-    val recyclerView = "1.0.0" //https://mvnrepository.com/artifact/androidx.recyclerview/recyclerview
-    val materialComp = "1.1.0-alpha07" //https://mvnrepository.com/artifact/com.google.android.material/material
-    val supportAnnot = "1.0.0-alpha1"  //https://mvnrepository.com/artifact/androidx.annotation/annotation
+    val recyclerView =
+        "1.0.0" //https://mvnrepository.com/artifact/androidx.recyclerview/recyclerview
+    val materialComp =
+        "1.1.0-alpha07" //https://mvnrepository.com/artifact/com.google.android.material/material
+    val supportAnnot =
+        "1.0.0-alpha1"  //https://mvnrepository.com/artifact/androidx.annotation/annotation
     val constraintLayout =
         "2.0.0-beta1"  //https://mvnrepository.com/artifact/androidx.constraintlayout/constraintlayout
     val room = "2.1.0-alpha04"  //https://mvnrepository.com/artifact/androidx.room/room-runtime
-    val androidxLifeCycle = "2.1.0-alpha04" //https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-runtime
+    val androidxLifeCycle =
+        "2.1.0-alpha04" //https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-runtime
     val coreKtx = "1.0.1"   //https://mvnrepository.com/artifact/androidx.core/core-ktx
     val fragmentKtx = "1.0.0"   //https://mvnrepository.com/artifact/androidx.fragment/fragment-ktx
-    val collectionKtx = "1.0.0" //https://mvnrepository.com/artifact/androidx.collection/collection-ktx
-    val viewmodelKtx = "2.1.0-alpha04" //https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-viewmodel-ktx
+    val collectionKtx =
+        "1.0.0" //https://mvnrepository.com/artifact/androidx.collection/collection-ktx
+    val viewmodelKtx =
+        "2.1.0-alpha04" //https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-viewmodel-ktx
     val reactiveStreamsKtx =
         "2.1.0-alpha04" //https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-reactivestreams-ktx
     val timber = "4.7.1"
     val leakCanary = "1.6.2"
     val navigationX = "2.1.0-alpha05"
     val viewPager = "1.0.0-alpha04"
+    val epoxy = "3.3.1"
 }
 
 object Android {
@@ -109,6 +116,10 @@ object AppDeps {
         "androidx.lifecycle:lifecycle-reactivestreams-ktx:${Version.reactiveStreamsKtx}"
     //Tools
     val timber = "com.jakewharton.timber:timber:${Version.timber}"
+
+    val epoxy = "com.airbnb.android:epoxy:${Version.epoxy}"
+    val epoxyKapt = "com.airbnb.android:epoxy-processor:${Version.epoxy}"
+    val epoxyDataBinding = "com.airbnb.android:epoxy-databinding:${Version.epoxy}"
 }
 
 object TestDeps {
