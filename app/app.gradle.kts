@@ -1,3 +1,4 @@
+
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -6,6 +7,7 @@ plugins {
     id("com.google.android.gms.oss-licenses-plugin")
     id("com.akaita.android.easylauncher")
     id("androidx.navigation.safeargs")
+    id("com.jakewharton.butterknife")
 }
 
 apply {
@@ -21,18 +23,18 @@ android {
 
     packagingOptions {
         excludes =
-            setOf(
-                "LICENSE",
-                "LICENSE.txt",
-                "META-INF/DEPENDENCIES",
-                "META-INF/ASL2.0",
-                "META-INF/NOTICE",
-                "META-INF/LICENSE",
-                "META-INF/LICENSE.txt",
-                "META-INF/core_release.kotlin_module",
-                "META-INF/MANIFEST.MF",
-                "META-INF/NOTICE.txt"
-            )
+                setOf(
+                        "LICENSE",
+                        "LICENSE.txt",
+                        "META-INF/DEPENDENCIES",
+                        "META-INF/ASL2.0",
+                        "META-INF/NOTICE",
+                        "META-INF/LICENSE",
+                        "META-INF/LICENSE.txt",
+                        "META-INF/core_release.kotlin_module",
+                        "META-INF/MANIFEST.MF",
+                        "META-INF/NOTICE.txt"
+                )
     }
 
     dataBinding {
@@ -57,7 +59,7 @@ android {
             keyAlias = "androiddebugkey"
             keyPassword = "android"
             storeFile =
-                rootProject.file("config/debug-keystore/debug.keystore")
+                    rootProject.file("config/debug-keystore/debug.keystore")
             storePassword = "android"
         }
     }
@@ -65,9 +67,9 @@ android {
     buildTypes {
         getByName("debug") {
             resValue(
-                "string",
-                "app_name",
-                "${Android.applicationBaseName} Debug"
+                    "string",
+                    "app_name",
+                    "${Android.applicationBaseName} Debug"
             )
             isDebuggable = true
             applicationIdSuffix = ".debug"
@@ -75,9 +77,9 @@ android {
 
         create("qa") {
             resValue(
-                "string",
-                "app_name",
-                "${Android.applicationBaseName} Beta"
+                    "string",
+                    "app_name",
+                    "${Android.applicationBaseName} Beta"
             )
             signingConfig = signingConfigs.findByName("debug")
             isMinifyEnabled = true
@@ -85,8 +87,8 @@ android {
             isShrinkResources = true
             applicationIdSuffix = ".testing"
             proguardFiles(
-                getDefaultProguardFile("proguard-android.txt"),
-                "proguard-rules.pro"
+                    getDefaultProguardFile("proguard-android.txt"),
+                    "proguard-rules.pro"
             )
         }
 
@@ -97,8 +99,8 @@ android {
             isDebuggable = false
             isShrinkResources = true
             proguardFiles(
-                getDefaultProguardFile("proguard-android.txt"),
-                "proguard-rules.pro"
+                    getDefaultProguardFile("proguard-android.txt"),
+                    "proguard-rules.pro"
             )
         }
     }
@@ -107,6 +109,7 @@ android {
 
 kapt {
     useBuildCache = true
+    correctErrorTypes = true
 }
 
 configure {
@@ -114,7 +117,7 @@ configure {
         create("debug") {
             // Add two more filters to all `beta` variants
             setFilters(
-                overlayFilter(File("config/overlays/dev-overlay.png"))
+                    overlayFilter(File("config/overlays/dev-overlay.png"))
 
             )
 
@@ -123,7 +126,7 @@ configure {
         create("qa") {
             // Add two more filters to all `beta` variants
             setFilters(
-                overlayFilter(File("config/overlays/qa-overlay.png"))
+                    overlayFilter(File("config/overlays/qa-overlay.png"))
 
             )
         }
@@ -146,6 +149,12 @@ dependencies {
 
     implementation(AppDeps.androidxNavigationFragment)
     implementation(AppDeps.androidxNavigationUI)
+
+    implementation(AppDeps.androidxViewPager)
+
+    kapt(AppDeps.epoxyKapt)
+    implementation(AppDeps.epoxy)
+    implementation(AppDeps.epoxyDataBinding)
 
 
     testImplementation(TestDeps.junit4)
