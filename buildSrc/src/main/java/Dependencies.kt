@@ -9,7 +9,8 @@ object Version {
     val recyclerView = "1.0.0" //https://mvnrepository.com/artifact/androidx.recyclerview/recyclerview
     val materialComp = "1.1.0-alpha07" //https://mvnrepository.com/artifact/com.google.android.material/material
     val supportAnnot = "1.0.0-alpha1"  //https://mvnrepository.com/artifact/androidx.annotation/annotation
-    val constraintLayout = "1.1.3"  //https://mvnrepository.com/artifact/androidx.constraintlayout/constraintlayout
+    val constraintLayout =
+        "2.0.0-beta1"  //https://mvnrepository.com/artifact/androidx.constraintlayout/constraintlayout
     val room = "2.1.0-alpha04"  //https://mvnrepository.com/artifact/androidx.room/room-runtime
     val androidxLifeCycle = "2.1.0-alpha04" //https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-runtime
     val coreKtx = "1.0.1"   //https://mvnrepository.com/artifact/androidx.core/core-ktx
@@ -33,11 +34,11 @@ object Android {
 }
 
 object Plugin {
-    val butterknife = "10.0.0"
+    val butterknife = "10.1.0"
     val gradleBuildTools = "3.5.0-beta04"
-    val ossLicenses = "0.9.3"
+    val ossLicenses = "0.9.5"
     val gradleVersion = "0.21.0"
-    val ktlintGradle = "6.3.1"
+    val ktlintGradle = "8.0.0"
     val detekt = "1.0.0-RC11"
     val easyLauncher = "1.3.1"
 }
