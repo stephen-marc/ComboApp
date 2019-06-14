@@ -6,6 +6,10 @@ plugins {
     id("com.github.ben-manes.versions") version Plugin.gradleVersion
 }
 
+apply{
+    from("https://raw.githubusercontent.com/JakeWharton/SdkSearch/master/gradle/projectDependencyGraph.gradle")
+}
+
 buildscript {
     repositories {
         google()
