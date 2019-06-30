@@ -1,3 +1,4 @@
+import android.view.ViewGroup
 package de.combo.app
 
 import android.os.Bundle
