@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import de.combo.app.R
 import de.combo.app.databinding.FragmentTrainingSelectionBinding
@@ -14,7 +15,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class TrainingSelectionFragment : Fragment() {
 
     lateinit var binding: FragmentTrainingSelectionBinding
-    val viewModel: TrainingSelectionViewModel by viewModel()
+    private val viewModel: TrainingSelectionViewModel by viewModel()
+    private lateinit var listController: CarouselController
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,16 +30,19 @@ class TrainingSelectionFragment : Fragment() {
                 container,
                 false
             )
+        initCarousel()
+        bindViewModel()
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        initCarousel()
+    private fun bindViewModel() {
+        viewModel.trainings.observe(viewLifecycleOwner, Observer { trainings ->
+            listController.setData(trainings)
+        })
     }
 
     private fun initCarousel() {
-        val listController = ListController()
+        listController = CarouselController()
         binding.recyclerView.apply {
             setController(listController)
             setPaddingDp(16)

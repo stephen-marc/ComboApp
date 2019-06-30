@@ -141,10 +141,16 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":training"))
 
+    implementation(AppDeps.timber)
+
     implementation(AppDeps.koin)
     implementation(AppDeps.koinViewModel)
 
     implementation(AppDeps.materialComp)
+
+    implementation(AppDeps.rxJava)
+    implementation(AppDeps.rxAndroid)
+    implementation(AppDeps.rxKotlin)
 
     implementation(AppDeps.androidxConstraintLayoutSolver)
     implementation(AppDeps.androidxConstraintLayout)

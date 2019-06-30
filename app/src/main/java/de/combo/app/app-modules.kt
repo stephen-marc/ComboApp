@@ -8,5 +8,9 @@ object App {
 }
 
 val viewModels = module {
-    viewModel { TrainingSelectionViewModel() }
+    viewModel {
+        TrainingSelectionViewModel(
+            getTrainingsOnceUsecase = get()
+        )
+    }
 }

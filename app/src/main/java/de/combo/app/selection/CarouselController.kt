@@ -4,7 +4,7 @@ import com.airbnb.epoxy.TypedEpoxyController
 import de.combo.app.trainingCard
 import domain.entities.Training
 
-class ListController : TypedEpoxyController<List<Training>>() {
+class CarouselController : TypedEpoxyController<List<Training>>() {
     override fun buildModels(data: List<Training>) {
         data.forEach { training ->
             trainingCard {
