@@ -26,4 +26,8 @@ abstract class SingleUseCase<T, in Params> constructor(
             .subscribeOn(Schedulers.from(threadExecutor))
             .observeOn(postExecutionThread.scheduler)
     }
+
+    operator fun invoke(params: Params? = null): Single<T> {
+        return execute(params)
+    }
 }

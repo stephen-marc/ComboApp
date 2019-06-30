@@ -2,6 +2,7 @@ package de.combo.app
 
 import App
 import android.app.Application
+import data.Data
 import domain.Domain
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -30,6 +31,7 @@ class ComboApp : Application() {
             modules(App.getModules())
             modules(Infrastructure.getModules())
             modules(Domain.getModules())
+            modules(Data.getModules())
         }
     }
 }
