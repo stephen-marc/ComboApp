@@ -8,8 +8,8 @@ import model.combo.Strike
 fun getTClasses(): MutableList<TrainingClass> {
     val strikes = getStrikes()
 
-    val jab = strikes.stream().filter { t -> t.name?.equals("Jab")!! }.findFirst().orElse(null)
-    val cross = strikes.stream().filter { t -> t.name?.equals("Cross")!! }.findFirst().orElse(null)
+    val jab = strikes.single { strike -> strike.name.equals("Jab") }
+    val cross = strikes.single { strike -> strike.name.equals("Cross") }
 
     var strikeList = listOf(jab, cross)
 
@@ -33,8 +33,9 @@ fun getTClasses(): MutableList<TrainingClass> {
     classB.roundsInMSec = 180000
 
     val classA = TrainingClass("A-Class")
-    classA.rounds = 7
-    classA.roundsInMSec = 180000
+    classA.rounds = 2
+    classA.breaksInMSec = 5000
+    classA.roundsInMSec = 10000
 
     val classes: MutableList<TrainingClass> = ArrayList()
     classes.add(classA)
@@ -49,12 +50,13 @@ fun getTClasses(): MutableList<TrainingClass> {
 fun getCombos(): MutableList<Combo> {
     val strikes = getStrikes()
 
-    val jab = strikes.stream().filter { t -> t.name?.equals("Jab")!! }.findFirst().orElse(null)
-    val cross = strikes.stream().filter { t -> t.name?.equals("Cross")!! }.findFirst().orElse(null)
-    val hookLeft = strikes.stream().filter { t -> t.name?.equals("Hook Left")!! }.findFirst().orElse(null)
-    val hookRight = strikes.stream().filter { t -> t.name?.equals("Hook Right")!! }.findFirst().orElse(null)
-    val uppercut = strikes.stream().filter { t -> t.name?.equals("Uppercut")!! }.findFirst().orElse(null)
-    val bodyLeft = strikes.stream().filter { t -> t.name?.equals("Body Left")!! }.findFirst().orElse(null)
+
+    val jab = strikes.single { strike -> strike.name.equals("Jab") }
+    val cross = strikes.single { strike -> strike.name.equals("Cross") }
+    val hookLeft = strikes.single { strike -> strike.name.equals("Hook Left") }
+    val hookRight = strikes.single { strike -> strike.name.equals("Hook Right") }
+    val uppercut = strikes.single { strike -> strike.name.equals("Uppercut") }
+    val bodyLeft = strikes.single { strike -> strike.name.equals("Body Left") }
 
     var combo1Strikes = listOf(jab, cross, hookLeft, hookRight, uppercut)
     val combo1 = Combo("Combo1", "Default", combo1Strikes, MutableList(combo1Strikes.size) { 1 })

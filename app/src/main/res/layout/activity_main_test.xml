@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+    >
+
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+        >
+            <TextView
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView5"/>
+            <TextView
+                    android:text="Round"
+                    android:layout_marginTop="100px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/round"
+            />
+            <TextView
+                    android:text="Status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/status"
+            />
+
+            <TextView
+                    android:text="Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/time"
+            />
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+            >
+                <TextView
+                        android:text="Combo: "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                />
+                <TextView
+                        android:text="ComboID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/combo"
+                />
+            </LinearLayout>
+
+
+            <Button
+                    android:text="Pause"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pause"
+            />
+            <Button
+                    android:text="Start"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/again"
+            />
+        </LinearLayout>
+
+    </FrameLayout>
+</layout>

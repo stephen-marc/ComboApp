@@ -4,54 +4,74 @@ package libraries.core.timer
 import java.util.*
 import model.TrainingClass
 
-class RoundTimer(
-    comboRefresh: Long,
+open class RoundTimer(
+    comboRefresh: Long = 50,
     var trainingClass: TrainingClass
 ) : Timer(comboRefresh) {
 
     var queue: Queue<Pair<Status, Int>> = ArrayDeque()
-    var cStatus: Status? = null
+    var status: Status = Status.STOP
         set(value) {
+            field = value
             onStatusChange(value)
         }
+    var lastStatus: Status = Status.STOP
 
-    override fun nextCombo(): Long {
+
+    override fun next(): Long {
         var pair = queue.poll()
-        cStatus = pair.first
+        status = pair.first
         return pair.second.toLong()
     }
 
     fun init() {
+        queue.clear()
         queue.add(Pair(Status.START, 3000))
-        for (i in 1..trainingClass.rounds) {
+        for (i in 1 until trainingClass.rounds) {
             queue.add(Pair(Status.TRAIN, trainingClass.roundsInMSec))
             queue.add(Pair(Status.REST, trainingClass.breaksInMSec))
         }
-        // remove last rest
-        queue.poll()
+        queue.add(Pair(Status.TRAIN, trainingClass.roundsInMSec))
+        queue.add(Pair(Status.STOP, 0))
+
     }
 
-    fun onStatusChange(value: Status?) {
-        println(value)
+    open fun onStatusChange(value: Status?) {
     }
 
     override fun onTickTimer(millisUntilFinished: Long) {
-        println(millisUntilFinished)
     }
 
     override fun onFinishTimer() {
-        println("Finish")
+        when (status) {
+            Status.START, Status.TRAIN, Status.REST -> start()
+        }
+    }
+
+    fun togglePauseResume() {
+        if(status == Status.PAUSE) {
+            resume()
+        } else if(status != Status.STOP) {
+            pause()
+        }
     }
 
     override fun pause() {
-        cStatus = Status.PAUSE
+        lastStatus = status
+        status = Status.PAUSE
         super.pause()
     }
 
     override fun stop() {
-        cStatus = Status.STOP
+        status = Status.STOP
         super.stop()
     }
+
+    override fun resume() {
+        status = lastStatus
+        super.resume()
+    }
+
 }
 
 enum class Status {

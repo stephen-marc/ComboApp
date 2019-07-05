@@ -8,28 +8,24 @@ abstract class Timer(
     private var countDownTimer: CountDownTimer? = null
 
     private var isPaused = false
-    private var isCancelled = false
     private var resumeFromMillis: Long = 0
 
     open fun pause() {
         isPaused = true
-        isCancelled = false
     }
 
     open fun resume() {
         isPaused = false
-        isCancelled = false
         startTimer(resumeFromMillis)
+        resumeFromMillis = 0
     }
 
     open fun start() {
-        isCancelled = false
         isPaused = false
-        startTimer(nextCombo())
+        startTimer(next())
     }
 
     open fun stop() {
-        isCancelled = false
         isPaused = false
         countDownTimer?.cancel()
     }
@@ -42,7 +38,6 @@ abstract class Timer(
                         resumeFromMillis = millisUntilFinished
                         cancel()
                     }
-                    isCancelled -> cancel()
                     else -> onTickTimer(millisUntilFinished)
                 }
             }
@@ -57,7 +52,7 @@ abstract class Timer(
     /**
      * returns next combo in ms
      */
-    abstract fun nextCombo(): Long
+    abstract fun next(): Long
 
     abstract fun onTickTimer(millisUntilFinished: Long)
 
