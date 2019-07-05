@@ -1,7 +1,7 @@
 import org.gradle.api.JavaVersion
 
 object Version {
-    val koin = "1.0.2"  //https://insert-koin.io/
+    val koin = "2.0.1"  //https://insert-koin.io/
     val rxJava = "2.2.4"    //https://github.com/ReactiveX/RxJava/releases
     val rxKotlin = "2.1.0"  //https://github.com/ReactiveX/RxKotlin
     val rxAndroid = "2.1.0" //https://github.com/ReactiveX/RxAndroid
@@ -123,7 +123,7 @@ object AppDeps {
 }
 
 object TestDeps {
-    val junit4 = "junit:junit:4.12"
+    val junit4 = "junit:junit:4.13-beta3"
     val androidxJunit = "androidx.test.ext:junit:1.1.1"
     val androidxEspresso = "androidx.test.espresso:espresso-core:3.2.0"
 

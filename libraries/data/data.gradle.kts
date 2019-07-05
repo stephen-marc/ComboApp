@@ -11,5 +11,8 @@ kapt {
 
 dependencies {
     implementation(project(":domain"))
-    implementation(AppDeps.kotlin)
+
+    implementation(AppDeps.koin)
+    implementation(AppDeps.rxJava)
+    implementation(AppDeps.rxKotlin)
 }

@@ -3,6 +3,6 @@
             xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/app_graph"
             app:startDestination="@id/trainingSelectionFragment">
 
-    <fragment android:id="@+id/trainingSelectionFragment" android:name="de.combo.app.TrainingSelectionFragment"
+    <fragment android:id="@+id/trainingSelectionFragment" android:name="de.combo.app.selection.TrainingSelectionFragment"
               android:label="TrainingSelectionFragment"/>
 </navigation>

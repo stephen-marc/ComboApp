@@ -1,3 +1,4 @@
+import Android.applicationId
 
 plugins {
     id("com.android.application")
@@ -142,7 +143,25 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":training"))
 
+    implementation(AppDeps.timber)
+
+    implementation(AppDeps.koin)
+    implementation(AppDeps.koinViewModel)
+
     implementation(AppDeps.materialComp)
+
+    implementation(AppDeps.rxJava)
+    implementation(AppDeps.rxAndroid)
+    implementation(AppDeps.rxKotlin)
+
+    implementation(AppDeps.androidxLifecycleCommon)
+    implementation(AppDeps.androidxLifecycleExtension)
+    implementation(AppDeps.androidxLifecycleLiveCore)
+    kapt(AppDeps.androidxLifecycleCompiler)
+    implementation(AppDeps.androidxLifecycleLiveData)
+    implementation(AppDeps.androidxLifecycleReactiveStreams)
+    implementation(AppDeps.androidxLifecycleRuntime)
+    implementation(AppDeps.androidxLifecycleViewmodel)
 
     implementation(AppDeps.androidxConstraintLayoutSolver)
     implementation(AppDeps.androidxConstraintLayout)

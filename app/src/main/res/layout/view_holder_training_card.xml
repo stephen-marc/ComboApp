@@ -25,7 +25,7 @@
 
             <View
                 android:id="@+id/color_banner"
-                android:layout_width="48dp"
+                android:layout_width="@dimen/color_banner_width"
                 android:layout_height="0dp"
                 android:background="?colorPrimary"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -81,6 +81,23 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/color_banner"
                 app:layout_constraintTop_toBottomOf="@+id/title_banner"
+                />
+
+            <TextView
+                android:id="@+id/moves"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:drawableStart="@drawable/ic_android_black_24dp"
+                android:paddingEnd="0dp"
+                android:paddingStart="8dp"
+                android:drawablePadding="24dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/lorem_ipsum"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
