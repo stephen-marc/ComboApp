@@ -1,0 +1,20 @@
+[
+  {
+    "id": "training_01",
+    "name": "Training A",
+    "description": "Lorem ipsum",
+    "imageName": "placeholder.png",
+    "configuration": {
+      "rounds": 1,
+      "roundLengthMilli": 60000,
+      "breakLengthMilli": 60000,
+      "strikeDurationMilli": 700,
+      "strikeProbability": 0.1,
+      "strikes": [
+        "J",
+        "C",
+        "BR"
+      ]
+    }
+  }
+]

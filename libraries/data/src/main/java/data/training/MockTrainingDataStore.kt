@@ -1,8 +1,10 @@
 package data.training
 
 import domain.datastore.base.TrainingDataStore
-import domain.entities.Training
+import domain.Strike
+import domain.Training
 import io.reactivex.Flowable
+import io.reactivex.Single
 
 class MockTrainingDataStore : TrainingDataStore {
     override fun getTrainingsOnce(): Flowable<List<Training>> {
@@ -36,6 +38,10 @@ class MockTrainingDataStore : TrainingDataStore {
                 )
             )
         }
+    }
+
+    fun getStrikesOnce() : Single<List<Strike>> {
+        return
     }
 
 }

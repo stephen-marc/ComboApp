@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Jab",
+    "abbreviation": "J"
+  },
+  {
+    "name": "Cross",
+    "abbreviation": "C"
+  },
+  {
+    "name": "Hook Left",
+    "abbreviation": "HL"
+  },
+  {
+    "name": "Hook Right",
+    "abbreviation": "HR"
+  },
+  {
+    "name": "Body Left",
+    "abbreviation": "BL"
+  },
+  {
+    "name": "Body Right",
+    "abbreviation": "BR"
+  },
+  {
+    "name": "Uppercut",
+    "abbreviation": "U"
+  },
+  {
+    "name": "Lowkick Left",
+    "abbreviation": "LL"
+  },
+  {
+    "name": "Lowkick Right",
+    "abbreviation": "LR"
+  },
+  {
+    "name": "Middlekick Left",
+    "abbreviation": "ML"
+  },
+  {
+    "name": "Middlekick Right",
+    "abbreviation": "MR"
+  },
+  {
+    "name": "Highkick Left",
+    "abbreviation": "HIL"
+  },
+  {
+    "name": "Highkick Right",
+    "abbreviation": "HIR"
+  }
+]
