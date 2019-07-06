@@ -1,6 +1,6 @@
 package domain.datastore.base
 
-import domain.entities.Training
+import domain.Training
 import io.reactivex.Flowable
 
 interface TrainingDataStore {

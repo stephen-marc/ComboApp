@@ -1,6 +1,6 @@
 package domain.repository.base
 
-import domain.entities.Training
+import domain.Training
 import io.reactivex.Flowable
 
 interface TrainingRepository {

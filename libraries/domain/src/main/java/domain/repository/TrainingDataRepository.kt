@@ -1,7 +1,7 @@
 package domain.repository
 
 import domain.datastore.base.TrainingDataStore
-import domain.entities.Training
+import domain.Training
 import domain.repository.base.TrainingRepository
 import io.reactivex.Flowable
 

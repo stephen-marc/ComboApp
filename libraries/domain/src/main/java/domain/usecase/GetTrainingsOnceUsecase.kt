@@ -1,6 +1,6 @@
 package domain.usecase
 
-import domain.entities.Training
+import domain.Training
 import domain.executor.PostExecutionThread
 import domain.executor.ThreadExecutor
 import domain.repository.base.TrainingRepository
