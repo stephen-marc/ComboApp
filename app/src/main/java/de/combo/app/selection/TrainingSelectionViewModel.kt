@@ -3,7 +3,7 @@ package de.combo.app.selection
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.LiveDataReactiveStreams
 import androidx.lifecycle.ViewModel
-import domain.entities.Training
+import domain.Training
 import domain.usecase.GetTrainingsOnceUsecase
 
 class TrainingSelectionViewModel(

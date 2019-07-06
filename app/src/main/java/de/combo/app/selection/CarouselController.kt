@@ -2,7 +2,7 @@ package de.combo.app.selection
 
 import com.airbnb.epoxy.TypedEpoxyController
 import de.combo.app.trainingCard
-import domain.entities.Training
+import domain.Training
 
 class CarouselController : TypedEpoxyController<List<Training>>() {
     override fun buildModels(data: List<Training>) {
