@@ -120,6 +120,8 @@ object AppDeps {
     val epoxy = "com.airbnb.android:epoxy:${Version.epoxy}"
     val epoxyKapt = "com.airbnb.android:epoxy-processor:${Version.epoxy}"
     val epoxyDataBinding = "com.airbnb.android:epoxy-databinding:${Version.epoxy}"
+
+    val moshi = "com.squareup.moshi:moshi-kotlin:1.8.0"
 }
 
 object TestDeps {
