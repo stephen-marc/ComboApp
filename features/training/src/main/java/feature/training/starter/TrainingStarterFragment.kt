@@ -1,4 +1,4 @@
-package feature.training
+package feature.training.starter
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,14 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import feature.training.databinding.FragmentTrainingDetailBinding
+import feature.training.R
 import feature.training.databinding.FragmentTrainingStarterBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class TrainingDetailFragment : Fragment() {
+class TrainingStarterFragment : Fragment() {
 
     lateinit var binding: FragmentTrainingStarterBinding
-    private val viewModel: TrainingDetailViewModel by viewModel()
+    private val viewModel: TrainingStarterViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,

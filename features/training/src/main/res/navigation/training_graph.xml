@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/trainingDetailFragment"
-        android:name="feature.training.TrainingDetailFragment"
+        android:name="feature.training.starter.TrainingStarterFragment"
         android:label="TrainingDetailFragment" />
 </navigation>
