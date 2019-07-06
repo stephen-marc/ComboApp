@@ -3,5 +3,6 @@
     <dimen name="color_banner_width">48dp</dimen>
     <dimen name="default_fragment_horizontal_margin">16dp</dimen>
     <dimen name="default_component_vertical_margin">16dp</dimen>
-    <dimen name="default_fragment_vertical_margin">16dp</dimen>
+    <dimen name="baseline_grid_2x">16dp</dimen>
+    <dimen name="baseline_grid_1x">8dp</dimen>
 </resources>

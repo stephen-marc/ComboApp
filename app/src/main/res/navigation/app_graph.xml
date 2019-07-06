@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/app_graph"
-            app:startDestination="@id/trainingSelectionFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_graph"
+    app:startDestination="@id/trainingSelectionFragment">
 
-    <fragment android:id="@+id/trainingSelectionFragment" android:name="de.combo.app.selection.TrainingSelectionFragment"
-              android:label="TrainingSelectionFragment"/>
+    <fragment
+        android:id="@+id/trainingSelectionFragment"
+        android:name="de.combo.app.selection.TrainingSelectionFragment"
+        android:label="TrainingSelectionFragment">
+        <action
+            android:id="@+id/action_trainingSelection_to_training_graph"
+            app:destination="@id/training_graph" />
+        <action
+            android:id="@+id/action_trainingSelectionFragment_self"
+            app:destination="@id/trainingSelectionFragment" />
+    </fragment>
+
+    <include app:graph="@navigation/training_graph" />
 </navigation>

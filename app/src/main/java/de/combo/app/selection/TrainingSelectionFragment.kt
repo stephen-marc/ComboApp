@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import de.combo.app.R
 import de.combo.app.databinding.FragmentTrainingSelectionBinding
@@ -39,10 +41,20 @@ class TrainingSelectionFragment : Fragment() {
         viewModel.trainings.observe(viewLifecycleOwner, Observer { trainings ->
             carouselController.setData(trainings)
         })
+
+        viewModel.navigation.observe(viewLifecycleOwner, Observer { event ->
+            event.getContentIfNotHandled()?.let { direction ->
+                navigateTo(direction)
+            }
+        })
+    }
+
+    private fun navigateTo(direction: NavDirections) {
+        findNavController().navigate(direction)
     }
 
     private fun initCarousel() {
-        carouselController = CarouselController()
+        carouselController = CarouselController(viewModel::onTrainingClicked)
         binding.recyclerView.apply {
             setController(carouselController)
             setPaddingDp(16)
