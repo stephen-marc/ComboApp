@@ -54,7 +54,7 @@ class JSONTrainingDataStore(
 
     private fun parseJsonTrainings(): List<TrainingEntity> {
         val jsonString =
-                resourceProvider.readAssetIntoString(ASSET_STRIKES_FILENAME)
+                resourceProvider.readAssetIntoString(ASSET_TRAINING_FILENAME)
         return trainingAdapter.fromJson(jsonString) ?: emptyList()
     }
 }

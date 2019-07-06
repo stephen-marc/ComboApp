@@ -1,7 +1,7 @@
 [
   {
     "id": "training_01",
-    "name": "Training A",
+    "title": "Training A",
     "description": "Lorem ipsum",
     "imageName": "placeholder.png",
     "configuration": {

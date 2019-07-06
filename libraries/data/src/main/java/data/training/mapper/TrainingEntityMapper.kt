@@ -17,7 +17,7 @@ class TrainingEntityMapper(
                 title = type.title,
                 description = type.description,
                 imageName = type.imageName,
-                config = trainingConfigEntityMapper.mapFromEntity(type.config)
+                config = trainingConfigEntityMapper.mapFromEntity(type.configuration)
         )
 
     }

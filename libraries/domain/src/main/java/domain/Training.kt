@@ -1,7 +1,7 @@
 package domain
 
 data class Training(
-    val id: Long,
+    val id: String,
     val title: String,
     val description: String,
     val imageName: String,
