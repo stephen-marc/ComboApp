@@ -42,7 +42,7 @@ object Android {
 
 object Plugin {
     val butterknife = "10.1.0"
-    val gradleBuildTools = "3.5.0-beta04"
+    val gradleBuildTools = "3.5.0-beta05"
     val ossLicenses = "0.9.5"
     val gradleVersion = "0.21.0"
     val ktlintGradle = "8.0.0"

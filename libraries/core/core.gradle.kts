@@ -1,9 +1,9 @@
-
 plugins {
     id("com.android.library")
     kotlin("android")
     kotlin("kapt")
 }
+
 
 kapt {
     useBuildCache = true
