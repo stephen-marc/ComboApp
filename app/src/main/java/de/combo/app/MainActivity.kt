@@ -10,7 +10,7 @@ import libraries.core.timer.ComboTimer
 import libraries.core.timer.RoundTimer
 import libraries.core.timer.Status
 import model.TrainingClass
-import java.util.*
+import java.util.Queue
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,9 +42,10 @@ class MainActivity : AppCompatActivity() {
                 super.onTickTimer(millisUntilFinished)
                 time_label.text = convertToString(millisUntilFinished)
             }
+
             override fun onStatusChange(value: Status?) {
                 super.onStatusChange(value)
-                if(value == Status.TRAIN) {
+                if (value == Status.TRAIN) {
                     comboTimer?.start()
                 }
 
@@ -94,7 +95,10 @@ class MainActivity : AppCompatActivity() {
         return "${minutes}:${seconds}"
     }
 
-    private fun convertRoundToString(trainingClass: TrainingClass, queue: Queue<Pair<Status, Int>>): CharSequence? {
+    private fun convertRoundToString(
+        trainingClass: TrainingClass,
+        queue: Queue<Pair<Status, Int>>
+    ): CharSequence? {
         var rounds = trainingClass.rounds
         var roundsLeft = rounds - queue.count { pair -> pair.first.equals(Status.TRAIN) }
         return "${roundsLeft}/${rounds}"

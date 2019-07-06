@@ -7,10 +7,11 @@ import domain.Training
 import domain.usecase.GetTrainingsOnceUsecase
 
 class TrainingSelectionViewModel(
-    val getTrainingsOnceUsecase: GetTrainingsOnceUsecase
+    val getTrainingsOnceUseCase: GetTrainingsOnceUsecase
 ) : ViewModel() {
 
-    private val _trainings = LiveDataReactiveStreams.fromPublisher(getTrainingsOnceUsecase())
+    //TODO: Map domain model into presenter model
+    private val _trainings = LiveDataReactiveStreams.fromPublisher(getTrainingsOnceUseCase())
     val trainings: LiveData<List<Training>>
         get() = _trainings
 }

@@ -16,7 +16,7 @@ class TrainingSelectionFragment : Fragment() {
 
     lateinit var binding: FragmentTrainingSelectionBinding
     private val viewModel: TrainingSelectionViewModel by viewModel()
-    private lateinit var listController: CarouselController
+    private lateinit var carouselController: CarouselController
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,14 +37,14 @@ class TrainingSelectionFragment : Fragment() {
 
     private fun bindViewModel() {
         viewModel.trainings.observe(viewLifecycleOwner, Observer { trainings ->
-            listController.setData(trainings)
+            carouselController.setData(trainings)
         })
     }
 
     private fun initCarousel() {
-        listController = CarouselController()
+        carouselController = CarouselController()
         binding.recyclerView.apply {
-            setController(listController)
+            setController(carouselController)
             setPaddingDp(16)
             layoutManager =
                 LinearLayoutManager(

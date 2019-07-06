@@ -9,8 +9,8 @@ class CarouselController : TypedEpoxyController<List<Training>>() {
         data.forEach { training ->
             trainingCard {
                 id(training.id)
+                training(training)
             }
         }
     }
-
 }

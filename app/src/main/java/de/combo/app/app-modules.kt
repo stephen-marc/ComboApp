@@ -10,7 +10,7 @@ object App {
 val viewModels = module {
     viewModel {
         TrainingSelectionViewModel(
-            getTrainingsOnceUsecase = get()
+            getTrainingsOnceUseCase = get()
         )
     }
 }

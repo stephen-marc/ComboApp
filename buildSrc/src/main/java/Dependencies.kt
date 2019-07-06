@@ -5,7 +5,7 @@ object Version {
     val rxJava = "2.2.4"    //https://github.com/ReactiveX/RxJava/releases
     val rxKotlin = "2.1.0"  //https://github.com/ReactiveX/RxKotlin
     val rxAndroid = "2.1.0" //https://github.com/ReactiveX/RxAndroid
-    val kotlin = "1.3.31"   // build.gradle
+    val kotlin = "1.3.40"   // build.gradle
     val recyclerView =
         "1.0.0" //https://mvnrepository.com/artifact/androidx.recyclerview/recyclerview
     val materialComp =

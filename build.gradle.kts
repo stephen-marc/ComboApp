@@ -64,9 +64,9 @@ allprojects {
     //keeps lint warnings on the minSDK
     val minSdkPropertyName = "devMinSdk"
     val appliedSdk =
-        if (project.hasProperty(minSdkPropertyName)) project.property(
-            minSdkPropertyName
-        ) else Android.minSdk
+            if (project.hasProperty(minSdkPropertyName)) project.property(
+                    minSdkPropertyName
+            ) else Android.minSdk
     val projectVersionName: groovy.lang.Closure<Any?> by extra
     val buildNumber = 1
 
@@ -85,12 +85,12 @@ allprojects {
 
                     // Friendly print the version output to the Gradle console
                     println(
-                        "\n--------" + "VERSION DATA--------" +
-                                "\n- Name: " + Android.applicationBaseName +
-                                "\n- CODE: " + versionCode +
-                                "\n- VER: " + versionName +
-                                "\n- MinSDK: " + minSdkVersion +
-                                "\n----------------------------\n"
+                            "\n--------" + "VERSION DATA--------" +
+                                    "\n- Name: " + Android.applicationBaseName +
+                                    "\n- CODE: " + versionCode +
+                                    "\n- VER: " + versionName +
+                                    "\n- MinSDK: " + minSdkVersion +
+                                    "\n----------------------------\n"
                     )
 
                     lintOptions {
@@ -99,6 +99,10 @@ allprojects {
                         isWarningsAsErrors = true
                         setLintConfig(file("../lint.xml"))
                     }
+                }
+
+                dataBinding {
+                    isEnabled = true
                 }
 
                 compileOptions {
@@ -129,8 +133,8 @@ allprojects {
                             isMinifyEnabled = true
                             isDebuggable = false
                             proguardFiles(
-                                getDefaultProguardFile("proguard-android.txt"),
-                                "proguard-rules.pro"
+                                    getDefaultProguardFile("proguard-android.txt"),
+                                    "proguard-rules.pro"
                             )
                         }
                     }
