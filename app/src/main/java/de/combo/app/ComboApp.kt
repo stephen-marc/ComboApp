@@ -4,6 +4,7 @@ import App
 import android.app.Application
 import data.Data
 import domain.Domain
+import feature.training.Training
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import timber.log.Timber
@@ -32,6 +33,8 @@ class ComboApp : Application() {
             modules(Infrastructure.getModules())
             modules(Domain.getModules())
             modules(Data.getModules())
+            modules(Training.getModules())
+
         }
     }
 }

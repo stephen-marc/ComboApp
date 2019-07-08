@@ -2,10 +2,18 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/training_graph"
-    app:startDestination="@id/trainingDetailFragment">
+    app:startDestination="@id/trainingStarterFragment">
 
     <fragment
-        android:id="@+id/trainingDetailFragment"
+        android:id="@+id/trainingStarterFragment"
         android:name="feature.training.starter.TrainingStarterFragment"
-        android:label="TrainingDetailFragment" />
+        android:label="TrainingStarterFragment">
+        <action
+            android:id="@+id/action_trainingStarter_to_trainingExercise"
+            app:destination="@id/trainingExerciseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainingExerciseFragment"
+        android:name="feature.training.exercise.TrainingExerciseFragment"
+        android:label="TrainingExerciseFragment" />
 </navigation>

@@ -1,6 +1,7 @@
 import org.gradle.api.JavaVersion
 
 object Version {
+    val rxBinding = "3.0.0-alpha2" //https://github.com/JakeWharton/RxBinding
     val koin = "2.0.1"  //https://insert-koin.io/
     val rxJava = "2.2.4"    //https://github.com/ReactiveX/RxJava/releases
     val rxKotlin = "2.1.0"  //https://github.com/ReactiveX/RxKotlin
@@ -27,7 +28,7 @@ object Version {
         "2.1.0-alpha04" //https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-reactivestreams-ktx
     val timber = "4.7.1"
     val leakCanary = "1.6.2"
-    val navigationX = "2.1.0-alpha05"
+    val navigationX = "2.1.0-alpha06"
     val viewPager = "1.0.0-alpha04"
     val epoxy = "3.3.1"
 }
@@ -48,7 +49,7 @@ object Plugin {
     val ktlintGradle = "8.0.0"
     val detekt = "1.0.0-RC11"
     val easyLauncher = "1.3.1"
-    val androidxSafeArgs = "2.1.0-alpha05"
+    val androidxSafeArgs = "2.1.0-alpha06"
 }
 
 object AppDeps {
@@ -122,6 +123,9 @@ object AppDeps {
     val epoxyDataBinding = "com.airbnb.android:epoxy-databinding:${Version.epoxy}"
 
     val moshi = "com.squareup.moshi:moshi-kotlin:1.8.0"
+
+    val rxBindingsMaterial = "com.jakewharton.rxbinding3:rxbinding-material:${Version.rxBinding}"
+    val rxBindingsCore = "com.jakewharton.rxbinding3:rxbinding-core:${Version.rxBinding}"
 }
 
 object TestDeps {

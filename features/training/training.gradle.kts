@@ -2,6 +2,13 @@ plugins {
     id("com.android.library")
     kotlin("android")
     kotlin("kapt")
+    id("androidx.navigation.safeargs")
+}
+
+android {
+    dataBinding {
+        isEnabled = true
+    }
 }
 
 kapt {
@@ -46,5 +53,8 @@ dependencies {
     kapt(AppDeps.epoxyKapt)
     implementation(AppDeps.epoxy)
     implementation(AppDeps.epoxyDataBinding)
+
+    implementation(AppDeps.rxBindingsCore)
+    implementation(AppDeps.rxBindingsMaterial)
 
 }
