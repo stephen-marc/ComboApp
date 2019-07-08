@@ -1,10 +1,9 @@
-import android.annotation.TargetApi
-import android.os.Build
+package domain.usecase
+
 import model.TrainingClass
 import model.combo.Combo
 import model.combo.Strike
 
-@TargetApi(Build.VERSION_CODES.N)
 fun getTClasses(): MutableList<TrainingClass> {
     val strikes = getStrikes()
 
@@ -46,7 +45,6 @@ fun getTClasses(): MutableList<TrainingClass> {
     return classes
 }
 
-@TargetApi(Build.VERSION_CODES.N)
 fun getCombos(): MutableList<Combo> {
     val strikes = getStrikes()
 
