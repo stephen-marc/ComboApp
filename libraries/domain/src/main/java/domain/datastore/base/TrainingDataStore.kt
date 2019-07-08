@@ -4,5 +4,5 @@ import domain.Training
 import io.reactivex.Flowable
 
 interface TrainingDataStore {
-    fun getTrainingsOnce(): Flowable<List<Training>>
+    fun getTrainingsOnceAndStream(): Flowable<List<Training>>
 }

@@ -11,8 +11,11 @@ object Training {
 }
 
 val viewModels = module {
-    viewModel {
-        TrainingStarterViewModel()
+    viewModel { (trainingsId: String) ->
+        TrainingStarterViewModel(
+            trainingsId = trainingsId,
+            getTrainingByIdOnceUsecase = get()
+        )
     }
 
     viewModel {

@@ -6,18 +6,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavDirections
 import domain.Training
-import domain.usecase.GetTrainingsOnceUsecase
+import domain.usecase.GetTrainingsOnceAndStreamUsecase
 import libraries.core.util.LiveEvent
 import libraries.core.util.triggerEvent
 import timber.log.Timber.e
 
 class TrainingSelectionViewModel(
-    val getTrainingsOnceUseCase: GetTrainingsOnceUsecase
+    val getTrainingsOnceAndStreamUseCase: GetTrainingsOnceAndStreamUsecase
 ) : ViewModel() {
 
     //TODO: Map domain model into presenter model
     private val _trainings =
-        LiveDataReactiveStreams.fromPublisher(getTrainingsOnceUseCase().doOnError { e(it) })
+        LiveDataReactiveStreams.fromPublisher(getTrainingsOnceAndStreamUseCase().doOnError { e(it) })
     val trainings: LiveData<List<Training>>
         get() = _trainings
 
@@ -25,8 +25,11 @@ class TrainingSelectionViewModel(
     val navigation: LiveData<LiveEvent<NavDirections>>
         get() = _navigation
 
-    fun onTrainingClicked() {
-        _navigation.triggerEvent(TrainingSelectionFragmentDirections.actionTrainingSelectionToTrainingGraph())
-
+    fun onTrainingClicked(id: String) {
+        _navigation.triggerEvent(
+            TrainingSelectionFragmentDirections.actionTrainingSelectionToTrainingGraph(
+                id
+            )
+        )
     }
 }

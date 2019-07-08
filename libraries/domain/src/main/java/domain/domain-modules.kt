@@ -4,8 +4,10 @@ import domain.executor.JobExecutor
 import domain.executor.ThreadExecutor
 import domain.repository.TrainingDataRepository
 import domain.repository.base.TrainingRepository
-import domain.usecase.GetTrainingsOnceUsecase
+import domain.usecase.GetTrainingByIdOnceUsecase
+import domain.usecase.GetTrainingsOnceAndStreamUsecase
 import org.koin.core.module.Module
+import org.koin.dsl.bind
 import org.koin.dsl.module
 
 object Domain {
@@ -14,7 +16,15 @@ object Domain {
 
 val usecases = module {
     factory {
-        GetTrainingsOnceUsecase(
+        GetTrainingsOnceAndStreamUsecase(
+            trainingRepository = get(),
+            postExecutionThread = get(),
+            threadExecutor = get()
+        )
+    }
+
+    factory {
+        GetTrainingByIdOnceUsecase(
             trainingRepository = get(),
             postExecutionThread = get(),
             threadExecutor = get()
@@ -31,5 +41,5 @@ val repository = module {
 }
 
 val executors = module {
-    single { JobExecutor() as ThreadExecutor }
+    single { JobExecutor() } bind ThreadExecutor::class
 }

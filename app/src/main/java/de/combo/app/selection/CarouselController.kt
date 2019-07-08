@@ -1,10 +1,11 @@
 package de.combo.app.selection
 
+import android.view.View
 import com.airbnb.epoxy.TypedEpoxyController
 import de.combo.app.trainingCard
 import domain.Training
 
-typealias OnTrainingClickedListener = () -> Unit
+typealias OnTrainingClickedListener = (View, String) -> Unit
 
 class CarouselController(
     val onTrainingClicked: OnTrainingClickedListener
@@ -14,8 +15,8 @@ class CarouselController(
             trainingCard {
                 id(training.id)
                 training(training)
-                onTrainingClicked { _, _, _, _ ->
-                    onTrainingClicked()
+                onTrainingClicked { model, _, view, _ ->
+                    onTrainingClicked(view, model.training().id)
                 }
             }
         }

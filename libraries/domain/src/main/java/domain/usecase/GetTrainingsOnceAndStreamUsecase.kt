@@ -7,7 +7,7 @@ import domain.repository.base.TrainingRepository
 import io.reactivex.Flowable
 import org.buffer.android.boilerplate.data.interactor.FlowableUseCase
 
-class GetTrainingsOnceUsecase(
+class GetTrainingsOnceAndStreamUsecase(
     private val trainingRepository: TrainingRepository,
     threadExecutor: ThreadExecutor,
     postExecutionThread: PostExecutionThread

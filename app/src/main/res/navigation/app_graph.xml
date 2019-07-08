@@ -10,10 +10,9 @@
         android:label="TrainingSelectionFragment">
         <action
             android:id="@+id/action_trainingSelection_to_training_graph"
-            app:destination="@id/training_graph" />
-        <action
-            android:id="@+id/action_trainingSelectionFragment_self"
-            app:destination="@id/trainingSelectionFragment" />
+            app:destination="@+id/training_graph">
+            <argument android:name="trainingId" />
+        </action>
     </fragment>
 
     <include app:graph="@navigation/training_graph" />

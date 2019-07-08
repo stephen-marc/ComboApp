@@ -35,7 +35,7 @@ class JSONTrainingDataStore(
             }.subscribeOn(Schedulers.io())
                 .subscribeWith(AsyncSubject.create())
 
-    override fun getTrainingsOnce(): Flowable<List<Training>> {
+    override fun getTrainingsOnceAndStream(): Flowable<List<Training>> {
         return Singles.zip(training.singleOrError(),
                 strikes.singleOrError()) { trainings, strikes ->
             val trainingEntityMapper =
